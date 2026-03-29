@@ -1,0 +1,13 @@
+{
+  "name": "vi-notes-electron",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "concurrently \"npm start --prefix frontend-react\" \"node backend/server.js\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "electron": "^28.0.0",
+    "wait-on": "^7.0.0"
+  }
+}
