@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "electron/main.js",
   "scripts": {
-    "start": "concurrently \"npm start --prefix frontend-react\" \"node backend/server.js\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"npm start --prefix frontend-react\" \"node backend/server.js\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "npm install --prefix frontend-react && npm run build --prefix frontend-react"
   },
   "devDependencies": {
     "concurrently": "^8.0.0",
