@@ -1,13 +1,12 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Session = require("./models/Session");
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/vinotes")
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.log(err));
-
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected ✅"))
+  .catch(err => console.log(err));
 const app = express();
 
 app.use(cors());
